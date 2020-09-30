@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Hamburger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="500px" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g>
+	<path class="st0" d="M249.7,124c18,0,32.4,14.4,32.7,32.1c0,18-14.4,32.4-32.1,32.7c-18,0.3-32.7-14.1-32.7-32.1v-0.3
+		C217.6,138.7,232,124,249.7,124L249.7,124z"/>
+	<ellipse class="st1" cx="250" cy="250.6" rx="32.1" ry="32.4"/>
+	<path class="st0" d="M249.7,310.9c18,0,32.4,14.4,32.7,32.1c0,18-14.4,32.4-32.1,32.7c-18,0.3-32.7-14.1-32.7-32.1c0,0,0,0,0-0.3
+		C217.6,325.5,232,310.9,249.7,310.9L249.7,310.9z"/>
+</g>
+</svg>

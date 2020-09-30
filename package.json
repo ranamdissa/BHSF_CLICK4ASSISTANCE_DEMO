@@ -1,0 +1,41 @@
+{
+  "name": "reacrtest01",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "glsl-film-grain": "^1.0.4",
+    "hammerjs": "^2.0.8",
+    "hls.js": "^0.13.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-device-detect": "^1.13.1",
+    "react-dom": "^16.13.1",
+    "react-ga": "^3.0.0",
+    "react-iiif-viewer": "^1.0.2",
+    "react-livechat": "^1.1.1",
+    "react-player": "^2.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "react-transition-group": "^4.4.1",
+    "three": "^0.115.0",
+    "three-dat.gui": "^2.0.7",
+    "three-vignette-background": "^1.0.3",
+    "zingtouch-stzhang": "^2.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@types/hls.js": "^0.13.0"
+  }
+}
