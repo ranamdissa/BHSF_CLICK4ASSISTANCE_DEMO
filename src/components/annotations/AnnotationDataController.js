@@ -194,6 +194,7 @@ class AnnotationDataController {
                 iiifSource: record.iiifSource || null,
                 iiifMultiSource: record.iiifMultiSource || null,
                 chatSrc: record.chatSrc || null,
+                chatTitle: record.chatTitle || null,
             });
         }
 

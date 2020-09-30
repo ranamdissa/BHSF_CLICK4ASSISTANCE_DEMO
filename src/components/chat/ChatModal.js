@@ -17,14 +17,11 @@ const ChatModal = (props) => {
     }
 
     let chatIframeElement = null;
-    if (props.showChat) {
         //<iframe title="pureChat" width='100%' height='680'
         chatIframeElement = <iframe title="pureChat" height="890"
                                     src={props.annotationData.chatSrc}
                               frameBorder="0">
         </iframe>;
-
-    }
 
     const modalCloseHandler = () => {
         props.chatCloseBtnHandler();
@@ -33,6 +30,7 @@ const ChatModal = (props) => {
 
     const modalChat = <Modal show={props.showChat} onHide={modalCloseHandler} animation={false} scrollable="true">
                 <Modal.Header closeButton>
+                    <Modal.Title>{props.annotationData.chatTitle}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {/*<div style={{width: "100%", height: "100%", all: "revert"}}>*/}

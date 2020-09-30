@@ -71,7 +71,8 @@ const AnnotationsDB = [
         videoId: null,
         videoURL: null,
         //This is Company Rana's URL
-        chatSrc: 'https://app.purechat.com/w/t0bd6',
+        chatTitle: "Company A",
+        chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=1&ToolType=1',
         headerText: '',
         bodyText: ``,
         annotationPos: {x:-1.27073 ,y:-1.01923,z:1.3573},
@@ -85,7 +86,8 @@ const AnnotationsDB = [
         videoId: null,
         videoURL: null,
         //This is Joe's Admin URL
-        chatSrc: 'https://app.purechat.com/w/nejvc',
+        chatTitle: "Company B",
+        chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=3&ToolType=1',
         headerText: '',
         bodyText: ``,
         annotationPos: {x:-1.27073  ,y:-1.01923,z:0.499758 },
