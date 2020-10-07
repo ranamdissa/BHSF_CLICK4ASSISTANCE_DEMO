@@ -6,15 +6,12 @@ const FLOOR_NUMBER = {
 };
 // Here we split by Artists Names
 const CameraLocationsDB = [
-
     {
         cameraLocationId: 'W01T01',
         floorNumber: FLOOR_NUMBER.BOTTOM_FLOOR,
         locationName: 'Exhibition Profile',
         cameraPosition: new Vector3(-3.884, 1.434, 1.877), // use THREE.Vector3
         cameraRotation: new Euler(0, 0.0, 0),  //use THREE.Euler
-
-
     },
     {
         cameraLocationId: 'photo01',
@@ -23,7 +20,6 @@ const CameraLocationsDB = [
         cameraPosition: new Vector3(6.086, 1.488, 14.720),
         cameraRotation: new Euler(-0.010, 0.712, 0.006),
     },
-
     {
         cameraLocationId: 'photo02',
         floorNumber: FLOOR_NUMBER.BOTTOM_FLOOR,
@@ -71,8 +67,6 @@ const CameraLocationsDB = [
         cameraPosition: new Vector3(-5.233, 1.488, 6.703),
         cameraRotation: new Euler(-0.013, 0.008, 0.000),
     },
-
-
 ];
 
 export {CameraLocationsDB, FLOOR_NUMBER};
