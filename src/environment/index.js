@@ -33,6 +33,31 @@ export const environments = [
     images:[ 'px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png' ],
   },
 
+  {
+    id: 'greenwich_park_03_4k.hdr',
+    name: 'greenwich_park_03_4k.hdr',
+    path: '/assets/environment/greenwich_park_03_4k.hdr',
+    format: 'hdr'
+  },
+
+  {
+    id: 'greenwich_park_4k.hdr',
+    name: 'greenwich_park_4k.hdr',
+    path: '/assets/environment/greenwich_park_4k.hdr',
+    format: 'hdr'
+  },
+  {
+    id: 'autumn_park_1k.hdr',
+    name: 'autumn_park_1k.hdr',
+    path: '/assets/environment/autumn_park_1k.hdr',
+    format: 'hdr'
+  },
+
+
+
+
+
+
 
 ];
 

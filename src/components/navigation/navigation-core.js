@@ -24,16 +24,23 @@ class NavigationCore {
         this.moveUp = this.moveUp.bind(this);
     }
 
+    static colliderRaycast = new Raycaster();
     // static rayCast = new Raycaster(new Vector3(), new Vector3(),0,1).layers.set(COLLIDER_LAYER_CHANEL);
 
     static canMove(origin,direction,far,object) {
         // return true;
-        const rayCast = new Raycaster(origin, direction.multiplyScalar(Math.sign(far)),0,Math.abs(far * COLLIDER_DISTANCE_RATIO));
-        rayCast.layers.set(COLLIDER_LAYER_CHANEL);
+       /* const rayCast = new Raycaster(origin, direction.multiplyScalar(Math.sign(far)),0,Math.abs(far * COLLIDER_DISTANCE_RATIO));
+        rayCast.layers.set(COLLIDER_LAYER_CHANEL);*/
+        NavigationCore.colliderRaycast.set(origin,direction.multiplyScalar(Math.sign(far)));
+        NavigationCore.colliderRaycast.near = 0;
+        NavigationCore.colliderRaycast.far = Math.abs(far * COLLIDER_DISTANCE_RATIO);
+        NavigationCore.colliderRaycast.layers.set(COLLIDER_LAYER_CHANEL);
+
         // rayCast.far = far;
         // rayCast.set(origin,direction);
         //console.log("Raycast=",origin,direction,far);
-        const intersect = rayCast.intersectObjects([object],true)
+        // const intersect = rayCast.intersectObjects([object],true)
+        const intersect =  NavigationCore.colliderRaycast.intersectObjects([object],true)
         if (intersect && intersect.length > 0) {
             return false;
         }

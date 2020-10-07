@@ -5,7 +5,7 @@ import * as THREE from 'three';
 //import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import CircleJoystick from '../joystick/CircleJoystick'
 import NavigationCore from '../navigation/navigation-core'
-import {THUMB_MOVE_TYPE, THUMB_CROSS_ORIENTATION} from '../joystick/CircleJoystickConstants'
+import {THUMB_MOVE_TYPE, THUMB_CROSS_ORIENTATION} from '../../client-data/CircleJoystickConstants'
 
 class ThreeBuildingSample extends Component {
     constructor(props) {

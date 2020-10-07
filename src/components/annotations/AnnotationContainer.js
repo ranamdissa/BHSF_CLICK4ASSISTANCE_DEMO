@@ -4,7 +4,12 @@ import {Vector3} from "three";
 import {CSS3DObject} from "three/examples/jsm/renderers/CSS3DRenderer";
 import {AnnotationsDB, ANNOTATION_CONTACT_TEXT} from '../../client-data/AnnotationDB'
 import {ANNOTATION_LAYER_CHANEL} from "../../client-data/GlobalConstants";
-import {DEFAULT_SPRITE_IMAGE_URL} from "../../client-data/clientOptions";
+import {
+    DEFAULT_SPRITE_IMAGE_URL,
+    SPRITE_COLOR,
+    SPRITE_TEXTURE_ENCODING,
+    SPRITE_TONEMAPPED
+} from "../../client-data/clientOptions";
 
 
 export const ANNOTATION_DOUBLE_SCALE = new THREE.Vector3(2, 2, 1);
@@ -34,9 +39,11 @@ class AnnotationContainer {
         this.originalAnnotScale = new THREE.Vector3();
 
         const spriteMap = new THREE.TextureLoader().load(process.env.PUBLIC_URL + DEFAULT_SPRITE_IMAGE_URL);
+        spriteMap.encoding = SPRITE_TEXTURE_ENCODING;
         // const spriteMap = new THREE.TextureLoader().load(process.env.PUBLIC_URL + '/assets/sprites/AnnotationsI.svg');
 
-        this.spriteMaterial = new THREE.SpriteMaterial({map: spriteMap, color: 0xffffff, fog: true});
+        this.spriteMaterial = new THREE.SpriteMaterial({map: spriteMap, color: SPRITE_COLOR, fog: true});
+        this.spriteMaterial.toneMapped = SPRITE_TONEMAPPED;
 
         /* const spriteMapVideo = new THREE.TextureLoader().load(process.env.PUBLIC_URL + '/assets/sprites/AnnotationsVideo.svg');
 
@@ -73,7 +80,11 @@ class AnnotationContainer {
         }*/
         if (mediaRecord.spriteImageURL) {
             const spriteMap = new THREE.TextureLoader().load(process.env.PUBLIC_URL + mediaRecord.spriteImageURL);
-            const spriteMat = new THREE.SpriteMaterial({map: spriteMap, color: 0xffffff, fog: true});
+            spriteMap.encoding = SPRITE_TEXTURE_ENCODING;
+
+            const spriteMat = new THREE.SpriteMaterial({map: spriteMap, color: SPRITE_COLOR, fog: true});
+            spriteMat.toneMapped = SPRITE_TONEMAPPED;
+
             sprite = new THREE.Sprite(spriteMat);
             annotation = new SpriteAnnotation(mesh, sprite, (displayMesh === 'Y'),mediaRecord);
         }

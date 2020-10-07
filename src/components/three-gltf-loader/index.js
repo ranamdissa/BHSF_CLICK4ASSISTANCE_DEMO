@@ -252,9 +252,12 @@ class ThreeGLTFLoader extends Component {
 
     componentDidMount() {
 
+        const newClientOptions = {
+            ...clientOptions,
+            useGUI: this.props.useGUI || clientOptions.useGUI,
+        }
 
-
-        this.viewer = new Viewer(this.mount.current, 'Y', clientOptions,this.teleportEventReceiver);
+        this.viewer = new Viewer(this.mount.current, 'Y', newClientOptions,this.teleportEventReceiver);
         // this.loadModel('NC_bottomFloor_005_2K_jpg.glb',
         // this.loadModel('NC_mainbuilding_jpg_022_bottom.glb',
         this.loadModel(clientOptions.modelName,

@@ -24,7 +24,7 @@ class CarouselAnnotationModal extends Component{
                 displayCarouselItems.push(
                     <Carousel.Item key={`carousel_item_${carouselPainting.paintingId}`}>
                         <ItemAnnotationModal key={`annotation_modal_${carouselPainting.paintingId}`}
-                                             annotationData={carouselPainting}/>
+                                             annotationData={carouselPainting} isCarouselUsed={true}/>
                     </Carousel.Item>
                 )
             })

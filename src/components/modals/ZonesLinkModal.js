@@ -1,7 +1,5 @@
 import React, {Component} from "react";
 import Modal from "react-bootstrap/Modal";
-import Carousel from "react-bootstrap/Carousel";
-import DisplayMediaComponent from "../annotations/DisplayMediaComponent";
 import {ZONE_LINKS_LABEL} from "../../client-data/clientOptions";
 
 
@@ -18,7 +16,7 @@ class ZonesLinkModal extends Component {
     };
 
     onClickHandler(zoneObj) {
-        console.log("ZonesLinkModal onClickHandler:", zoneObj);
+        // console.log("ZonesLinkModal onClickHandler:", zoneObj);
         this.props.onClickHandler(zoneObj);
     }
 

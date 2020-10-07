@@ -24,9 +24,12 @@ class MediaController{
                 if (mediaRecord.isStandaloneVideo) {
                     this._videoContainer.addVideoDisplay(mediaRecord, node);
                 }
+                else if (mediaRecord.isAudioPlayer) {
+                    this._videoContainer.addVideoDisplay(mediaRecord, node);
+                }
             }
 
-            if (mediaRecord.displayMesh === 'N' && !mediaRecord.isStandaloneVideo) {
+            if (mediaRecord.displayMesh === 'N' && !(mediaRecord.isStandaloneVideo || mediaRecord.isAudioPlayer)) {
                 node.visible = false;
             }
 
@@ -37,12 +40,10 @@ class MediaController{
     addMediaWithNoParent = () => {
         const records = AnnotationDataController.getAnnotationsWithNoParent();
         records.forEach(mediaRecord => {
-            console.log("addMediaWithNoParent begin",mediaRecord);
             if (mediaRecord.isAnnotation) {
                 this._annotationContainer.addAnnotationToMesh(null, mediaRecord);
             }
             else if (mediaRecord.isCSS3DObject) {
-                console.log("addMediaWithNoParent",mediaRecord);
                 this._css3dContainer.addCSS3DObject(null,mediaRecord);
             }
             else if (mediaRecord.isAudioPlayer) {

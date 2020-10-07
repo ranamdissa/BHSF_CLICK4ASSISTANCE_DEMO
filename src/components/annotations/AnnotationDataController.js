@@ -1,6 +1,18 @@
-import {AnnotationsDB, HAS_MEDIA_CAROUSEL_LINK} from '../../client-data/AnnotationDB';
+import {
+    AnnotationsDB,
+    HAS_MEDIA_CAROUSEL_LINK,
+    ANNOTATION_TEXT_ALIGNMENT,
+    ANNOTATION_TEXT_LINE_HEIGHT,
+    CONTACT_URL,
+} from '../../client-data/AnnotationDB';
 import {ANNOTATION_VIDEO_DISPLAY, ANNOTATION_PARENT, VIDEO_PLAYING_MODE} from '../../client-data/GlobalConstants';
 import * as THREE from 'three';
+import {
+    DEFAULT_AUDIO_PAUSE_SPRITE_IMAGE_URL,
+    DEFAULT_AUDIO_PLAY_SPRITE_IMAGE_URL,
+    DEFAULT_VIDEO_PAUSE_SPRITE_IMAGE_URL,
+    DEFAULT_VIDEO_PLAY_SPRITE_IMAGE_URL
+} from "../../client-data/clientOptions";
 
 class AnnotationDataController {
 
@@ -64,7 +76,7 @@ class AnnotationDataController {
             const annotationRotation = record.annotationRotation ? new THREE.Vector3(record.annotationRotation.x, record.annotationRotation.y, record.annotationRotation.z) : null;
             const imageURL = record.imageURL || `/paintings/${record.paintingId}.jpg`;
             const iframeSource = record.iframeSource || null;
-            const hasCarouselAsParent = record.hasCarouselAsParent || false;
+            const hasCarouselAsParent = record.hasCarouselAsParent || 'N';
 
 
             // console.log("[AnnotationDataController]", record.paintingId);
@@ -130,8 +142,8 @@ class AnnotationDataController {
             const videoButtonScale = record.videoButtonScale ? new THREE.Vector3(record.videoButtonScale.x, record.videoButtonScale.y, record.videoButtonScale.z) : null;
             const videoButtonPos = record.videoButtonPos ? new THREE.Vector3(record.videoButtonPos.x, record.videoButtonPos.y, record.videoButtonPos.z) : null;
 
-            const videoPlaySpriteImageURL = record.videoPlaySpriteImageURL ? process.env.PUBLIC_URL + record.videoPlaySpriteImageURL : process.env.PUBLIC_URL + '/assets/sprites/videoPlayButton.svg';
-            const videoPauseSpriteImageURL = record.videoPauseSpriteImageURL ? process.env.PUBLIC_URL + record.videoPauseSpriteImageURL : process.env.PUBLIC_URL + '/assets/sprites/videoPauseButton.svg';
+            const videoPlaySpriteImageURL = record.videoPlaySpriteImageURL ? process.env.PUBLIC_URL + record.videoPlaySpriteImageURL : (isAudioPlayer ? process.env.PUBLIC_URL + DEFAULT_AUDIO_PLAY_SPRITE_IMAGE_URL : process.env.PUBLIC_URL + DEFAULT_VIDEO_PLAY_SPRITE_IMAGE_URL);
+            const videoPauseSpriteImageURL = record.videoPauseSpriteImageURL ? process.env.PUBLIC_URL + record.videoPauseSpriteImageURL : (isAudioPlayer ? process.env.PUBLIC_URL + DEFAULT_AUDIO_PAUSE_SPRITE_IMAGE_URL : process.env.PUBLIC_URL + DEFAULT_VIDEO_PAUSE_SPRITE_IMAGE_URL);
 
 
             return ({
@@ -195,6 +207,10 @@ class AnnotationDataController {
                 iiifMultiSource: record.iiifMultiSource || null,
                 chatSrc: record.chatSrc || null,
                 chatTitle: record.chatTitle || null,
+                isMediaUsed: record.isMediaUsed || 'Y',
+                annotationTextAlignment: record.annotationTextAlignment || ANNOTATION_TEXT_ALIGNMENT || "center",
+                annotationTextLineHeight: record.annotationTextLineHeight || ANNOTATION_TEXT_LINE_HEIGHT || "1.5",
+                contactUrlLabel: record.contactUrlLabel || CONTACT_URL,
             });
         }
 

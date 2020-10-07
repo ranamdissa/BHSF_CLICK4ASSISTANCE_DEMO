@@ -39,6 +39,9 @@ export const DEFAULT_ANNOTATION_LOCATION_Z_OFFSET = 0.1 // in meters. Z offset. 
 export const DEFAULT_ANNOTATION_SCALE = new THREE.Vector3(.075, .075, 1);// export const DEFAULT_SPRITE_IMAGE_URL = '/assets/sprites/AnnotationsI.svg'
 
 export const DEFAULT_SPRITE_IMAGE_URL = '/assets/sprites/AnnotationsI_orange.svg'
+export const SPRITE_TONEMAPPED = false; //will effect the custom sprite defined in AnnotationDB
+export const SPRITE_COLOR = 0x999999;//0x999999; // RGB color - will effect the custom sprite defined in AnnotationDB
+export const SPRITE_TEXTURE_ENCODING = THREE.LinearEncoding; //THREE.LinearEncoding;   //will effect the custom sprite defined in AnnotationDB
 
 export const CAMERA_LOCATION_OFFSET = 4.5; //how far camera will offset when using camera hoping
 
@@ -46,4 +49,36 @@ export const ZONE_LINKS_LABEL = 'Teleport';
 export const TELEPORTPOINT_DISTANCE_RATIO = 0.5;
 export const COLLIDER_DISTANCE_RATIO = 0.5;
 
-export const DISPLAY_ZONE_LINK = false; //show hoping icon in the menu
+export const DISPLAY_ZONE_LINK = true; //show hoping icon in the menu
+
+export const DEFAULT_VIDEO_PLAY_SPRITE_IMAGE_URL = '/assets/sprites/videoPlayButtonBlack.svg';
+export const  DEFAULT_VIDEO_PAUSE_SPRITE_IMAGE_URL = '/assets/sprites/videoPauseButtonBlack.svg';
+export const VIDEO_SPRITE_TONEMAPPED = false; //will effect the custom sprite defined in AnnotationDB
+export const VIDEO_SPRITE_COLOR = 0xaaaaaa;//0x999999; // RGB color - will effect the custom sprite defined in AnnotationDB
+export const VIDEO_SPRITE_TEXTURE_ENCODING = THREE.LinearEncoding; //THREE.LinearEncoding;   //will effect the custom sprite defined in AnnotationDB
+
+export const DEFAULT_VIDEO_ANNOTATION_LOCATION = ANNOTATION_LOCATION.BOTTOM_CENTER; // can be one of ANNOTATION_LOCATION. Default is TOP_LEFT
+
+export const DEFAULT_VIDEO_ANNOTATION_LOCATION_VERT_OFFSET = .15 // in meters. vertical offset. default is 0.0
+
+export const DEFAULT_VIDEO_ANNOTATION_LOCATION_HORIZ_OFFSET = 0 // in meters. Horizontal offset. default is 0.0
+
+export const DEFAULT_VIDEO_ANNOTATION_LOCATION_Z_OFFSET = 0.1 // in meters. Z offset. default is 0.1
+
+//Rana comments: this decides the size of the annotation buttons in 3D world. Don't change the z-axes
+export const DEFAULT_VIDEO_ANNOTATION_SCALE = new THREE.Vector3(.15, .15, 1);// export const DEFAULT_SPRITE_IMAGE_URL = '/assets/sprites/AnnotationsI.svg'
+
+
+export const DEFAULT_AUDIO_PLAY_SPRITE_IMAGE_URL = '/assets/sprites/SoundIconYellow.svg';
+export const  DEFAULT_AUDIO_PAUSE_SPRITE_IMAGE_URL = '/assets/sprites/videoPauseButton.svg';
+
+export const DEFAULT_AUDIO_ANNOTATION_LOCATION = ANNOTATION_LOCATION.CENTER; // can be one of ANNOTATION_LOCATION. Default is TOP_LEFT
+
+export const DEFAULT_AUDIO_ANNOTATION_LOCATION_VERT_OFFSET = 0 // in meters. vertical offset. default is 0.0
+
+export const DEFAULT_AUDIO_ANNOTATION_LOCATION_HORIZ_OFFSET = 0 // in meters. Horizontal offset. default is 0.0
+
+export const DEFAULT_AUDIO_ANNOTATION_LOCATION_Z_OFFSET = 0.25 // in meters. Z offset. default is 0.1
+
+//Rana comments: this decides the size of the annotation buttons in 3D world. Don't change the z-axes
+export const DEFAULT_AUDIO_ANNOTATION_SCALE = new THREE.Vector3(.15, .15, 1);// export const DEFAULT_SPRITE_IMAGE_URL = '/assets/sprites/AnnotationsI.svg'

@@ -6,15 +6,16 @@ import ItemAnnotationModal from "./ItemAnnotationModal";
 import ReactGa from "react-ga";
 import DisplayMediaComponentProxy from "./DisplayMediaComponentProxy";
 import ContactLinksModal from "./ContactLinksModal";
+import {GALLERY_LINK_LABEL} from "./../../client-data/AnnotationDB";
 
 class GalleryAnnotation extends Component {
     constructor(props) {
         super(props);
 
-            this.state = {
-                showChildWorks: false,
-                showAnnotationModal: true,
-            }
+        this.state = {
+            showChildWorks: false,
+            showAnnotationModal: true,
+        }
 
 
 
@@ -65,7 +66,8 @@ class GalleryAnnotation extends Component {
                                              showAnnotationModal={this.state.showAnnotationModal}
                                              hideAnnotationModal={this.hideChildWorksHandler}
                                              annotationModalSize={this.props.annotationModalSize}
-                                             annotationData={childPainting}/>
+                                             annotationData={childPainting}
+                                             isCarouselUsed={true}/>
                     </Carousel.Item>
                 )
             })
@@ -77,7 +79,7 @@ class GalleryAnnotation extends Component {
 
     render() {
 
-        const works = <ContactLink contactName="WORKS" isVerticalBar={false} hrefLink="#"
+        const works = <ContactLink contactName={GALLERY_LINK_LABEL} isVerticalBar={false} hrefLink="#"
                                    onClickHandler={this.showWorksHandler}/>;
         // console.log("[GalleryAnnotation] displayCarouselItems", this.displayItemsInCarousel());
 
@@ -119,7 +121,7 @@ class GalleryAnnotation extends Component {
                                 <div className="annotation-main-container-modal">
                                     <div className="annotation-media-container">
                                         <div className="annotation-image-wrapper">
-                                            <DisplayMediaComponentProxy annotationData={this.props.annotationData}/>
+                                            <DisplayMediaComponentProxy annotationData={this.props.annotationData} isCarouselUsed={false}/>
                                         </div>
                                     </div>
                                     <div className="annotation-text-container">
@@ -131,7 +133,7 @@ class GalleryAnnotation extends Component {
                                         </div>
                                     </div>
                                     <div className="annotation-contact-container">
-                                        <ContactLinksModal hasMediaCarouselLink={works} annotationData={this.props.annotationData}/>
+                                        <ContactLinksModal key="hasMediaCarouselLink" hasMediaCarouselLink={works} annotationData={this.props.annotationData}/>
 
                                     </div>
                                 </div>
@@ -144,7 +146,6 @@ class GalleryAnnotation extends Component {
         }
 
     }
-
 }
 
 export default GalleryAnnotation;

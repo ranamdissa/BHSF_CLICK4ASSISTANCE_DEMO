@@ -10,8 +10,10 @@ const DisplayMediaComponentProxy = (props) => {
             imageUrl={props.annotationData.imageUrl}
             iiifSource={props.annotationData.iiifSource}
             iiifMultiSource={props.annotationData.iiifMultiSource}
+            carouselUsed={props.isCarouselUsed}
+            isMediaUsed={props.annotationData.isMediaUsed}
         />
-        )
+    )
 
 }
 

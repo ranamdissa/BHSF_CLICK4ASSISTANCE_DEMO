@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import ContactLink from "./ContactLink";
-import {HAS_MEDIA_CAROUSEL_LINK} from "../../client-data/GlobalConstants"
 
 import Modal from "react-bootstrap/Modal";
 import Carousel from "react-bootstrap/Carousel";
 
 import ReactGa from 'react-ga';
-import DisplayMediaComponent from "./DisplayMediaComponent";
 import DisplayMediaComponentProxy from "./DisplayMediaComponentProxy";
 import OnlyMediaCarousel from "./OnlyMediaCarousel";
 import ContactLinksModal from "./ContactLinksModal";
@@ -53,10 +51,10 @@ class AnnotationModal extends Component {
 
         let hasMediaCarouselLink = null;
         if (this.state.hasMediaCarousel === "Y") {
-            hasMediaCarouselLink = <ContactLink contactName={this.props.annotationData.mediaCarouselLinkLabel} isVerticalBar={false} hrefLink="#" onClickHandler={this.showMediaCarouselHandler}/>
+            hasMediaCarouselLink =
+                <ContactLink contactName={this.props.annotationData.mediaCarouselLinkLabel} isVerticalBar={false}
+                             hrefLink="#" onClickHandler={this.showMediaCarouselHandler}/>
         }
-
-
 
         if (this.state.showMediaCarousel) {
             /* Show a carousel page*/
@@ -85,20 +83,22 @@ class AnnotationModal extends Component {
                         <Modal.Body>
                             <div>
                                 <div className="annotation-main-container-modal">
-                                    <div className="annotation-media-container">
-                                        <div className="annotation-image-wrapper">
-                                            <DisplayMediaComponentProxy annotationData={this.props.annotationData}/>
-                                        </div>
-                                    </div>
+
+                                    <DisplayMediaComponentProxy annotationData={this.props.annotationData}  isCarouselUsed={false}/>
+
                                     <div className="annotation-text-container">
                                         <div className="annotation-header-text-container"
                                              dangerouslySetInnerHTML={{__html: this.state.headerText}}>
                                         </div>
-                                        <div className="annotation-body-text-container">
+                                        <div className="annotation-body-text-container"
+                                             style={{textAlign: this.state.annotationTextAlignment,
+                                             lineHeight: this.state.annotationTextLineHeight}}
+                                        >
                                             <p dangerouslySetInnerHTML={{__html: this.state.bodyText}}></p>
                                         </div>
                                     </div>
-                                    <ContactLinksModal hasMediaCarouselLink={hasMediaCarouselLink} annotationData={this.props.annotationData}/>
+                                    <ContactLinksModal key="hasMediaCarouselLink" hasMediaCarouselLink={hasMediaCarouselLink}
+                                                       annotationData={this.props.annotationData}/>
                                 </div>
                             </div>
                         </Modal.Body>

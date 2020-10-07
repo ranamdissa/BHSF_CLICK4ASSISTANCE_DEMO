@@ -42,7 +42,7 @@ class SpriteAnnotation {
 
         if (mesh) {
             this.mesh.add(this.sprite);
-            this.spriteGroup.add(mesh);
+            //this.spriteGroup.add(mesh);
             if (this._spriteWorldPos) {
                 this.calcAnnotationPos();
             }
@@ -69,9 +69,9 @@ class SpriteAnnotation {
                 offsetY = (offsetY + boxSize.y/2);
                 break;
 
-             case ANNOTATION_LOCATION.CENTER_RIGHT:
-                 offsetX = (offsetX + boxSize.x/2);
-                 break;
+            case ANNOTATION_LOCATION.CENTER_RIGHT:
+                offsetX = (offsetX + boxSize.x/2);
+                break;
 
             case ANNOTATION_LOCATION.BOTTOM_RIGHT:
                 offsetX = (offsetX + boxSize.x/2);
@@ -79,7 +79,7 @@ class SpriteAnnotation {
                 break;
 
             case ANNOTATION_LOCATION.BOTTOM_CENTER:
-                offsetY = (offsetY + boxSize.Y/2) * -1;
+                offsetY = (offsetY + boxSize.y/2) * -1;
                 break;
 
             case ANNOTATION_LOCATION.BOTTOM_LEFT:
@@ -133,10 +133,18 @@ class SpriteAnnotation {
 
     autoCalcSpritePos =() => {
         // const box = new THREE.Box3().setFromObject(this.mesh);
-        const boundingBox = this.mesh.geometry.boundingBox;
-       /* const center = box.getCenter(new THREE.Vector3());
-        const boxSize = box.getSize(new THREE.Vector3());
-        const center1 = boundingBox.getCenter(new THREE.Vector3());*/
+        let boundingBox;
+        if (this.mesh.isMesh) {
+
+            boundingBox = this.mesh.geometry.boundingBox;
+        } else { //if it is grouped (GLTF importer makes n meshes out of a mesh with n (n > 1) materials and then group these meshes)
+            boundingBox = new THREE.Box3().setFromObject(this.mesh);
+            boundingBox.applyMatrix4(this.mesh.matrixWorld); //need to align the bounding box with the group
+
+        }
+        /* const center = box.getCenter(new THREE.Vector3());
+         const boxSize = box.getSize(new THREE.Vector3());
+         const center1 = boundingBox.getCenter(new THREE.Vector3());*/
         const boxSize1 = boundingBox.getSize(new THREE.Vector3());
 
         //Rana comments: this is for positioning the annotation button in 3D world boxSize1.x / 2 everything comes from the center of the poster/painting
@@ -157,13 +165,13 @@ class SpriteAnnotation {
         //this.css3dAnnot = null;
         // spritePos.sub(offset);
         this.sprite.position.copy(spritePos);
-        if (!this.displayMesh) {
+        //if (!this.displayMesh) {
 
-            this.sprite.getWorldPosition(worldPos);
-            this.mesh.remove(this.sprite);
-            this.sprite.position.copy(worldPos);
-            this.spriteGroup.add(this.sprite)
-        }
+        this.sprite.getWorldPosition(worldPos);
+        this.mesh.remove(this.sprite);
+        this.sprite.position.copy(worldPos);
+        this.spriteGroup.add(this.sprite)
+        //}
 
         // const wp = new THREE.Vector3();
         // this.sprite.getWorldPosition(wp);
@@ -171,23 +179,23 @@ class SpriteAnnotation {
     }
 
     calcAnnotationPos = () => {
-        if (this.displayMesh) {
-            this.sprite.position.set(0,0,0);
-            this.sprite.updateMatrixWorld(true);
-            const worldPos1 = this.spriteWorldPos.clone();
-            const worldPos2 = this.spriteWorldPos.clone();
-            const localPos1 = this.sprite.worldToLocal(worldPos1);
-            const localPos2 = this.sprite.localToWorld(worldPos2);
-            const scale = this.sprite.scale.clone();
-            this.sprite.position.copy(localPos1.multiply(scale));
+        /* if (this.displayMesh) {
+             this.sprite.position.set(0,0,0);
+             this.sprite.updateMatrixWorld(true);
+             const worldPos1 = this.spriteWorldPos.clone();
+             const worldPos2 = this.spriteWorldPos.clone();
+             const localPos1 = this.sprite.worldToLocal(worldPos1);
+             const localPos2 = this.sprite.localToWorld(worldPos2);
+             const scale = this.sprite.scale.clone();
+             this.sprite.position.copy(localPos1.multiply(scale));
+         }
+         else {*/
+        if (this.mesh) {
+            this.mesh.remove(this.sprite);
         }
-        else {
-            if (this.mesh) {
-                this.mesh.remove(this.sprite);
-            }
-            this.sprite.position.copy(this.spriteWorldPos);
-            this.spriteGroup.add(this.sprite)
-        }
+        this.sprite.position.copy(this.spriteWorldPos);
+        this.spriteGroup.add(this.sprite)
+        // }
 
         // const wp = new THREE.Vector3();
         // this.sprite.getWorldPosition(wp);

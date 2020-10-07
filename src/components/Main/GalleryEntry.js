@@ -10,8 +10,10 @@ import AnnotationPage from "../../components/annotations/AnnotationPage";
 class GalleryEntry extends Component {
     constructor(props) {
         super(props);
+        const urlParams = new URLSearchParams(this.props.location.search);
         this.state = {
-            enterApp: false
+            enterApp: false,
+            useGUI:urlParams.get("useGUI"),
         }
     }
 
@@ -30,7 +32,7 @@ class GalleryEntry extends Component {
                 {/*<ThreeBuildingSample/>*/}
                 {/*<CircleJoystick/>*/}
                 {/*<ThreeGLTFLoader/>*/}
-                 {this.state.enterApp ? <ThreeGLTFLoader/> : null}
+                 {this.state.enterApp ? <ThreeGLTFLoader useGUI={this.state.useGUI} /> : null}
                 {!this.state.enterApp ? <EnterAppModal enterApp={this.enterApp}/> : null}
                 {/*<AnnotationPage paintingId="W01P01"/>*/}
             </div>

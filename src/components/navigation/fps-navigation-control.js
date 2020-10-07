@@ -1,4 +1,4 @@
-import {EVENT_SOURCE, EVENT_KEY_TYPES, EVENT_STATUS, JOYSTICK_SPEED} from './fps-navigation-constants'
+import {EVENT_SOURCE, EVENT_KEY_TYPES, EVENT_STATUS, JOYSTICK_SPEED} from '../../client-data/fps-navigation-constants'
 import NavigationCore from "./navigation-core";
 import * as Hammer from 'hammerjs';
 // import ZingTouch from 'zingtouch-stzhang';

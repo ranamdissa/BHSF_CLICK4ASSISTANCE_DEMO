@@ -17,7 +17,8 @@ export const ANNOTATION_LOCATION = {
     BOTTOM_LEFT: 5,
     CENTER_LEFT: 6,
     TOP_LEFT: 7,
-    TOP_CENTER: 8
+    TOP_CENTER: 8,
+    CENTER: 9,
 };
 
 
@@ -42,9 +43,11 @@ export const V21_ARTSPACE_WEBSITE = "https://v21artspace.com/";
 
 export const thisIsMobile = isMobile;
 
+//these variables can be used for Video and Audio
 export const VIDEO_PLAYING_MODE = {
     VIDEO_NOT_AUTO_PLAY:'N', //default video creation with buttons
     VIDEO_AUTO_PLAY_NO_BUTTONS:'Y', //used cgar e.g. 'Y' just for back compatibility
     VIDEO_AUTO_PLAY_WITH_BUTTONS:'B', //Auto play with buttons to pause and replay
 }
 
+export const MAX_ANNOTATION_LINKS_PER_LINE = 3;

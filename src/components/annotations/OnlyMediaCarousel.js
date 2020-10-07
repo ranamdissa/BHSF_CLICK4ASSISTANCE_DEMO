@@ -12,6 +12,7 @@ import Modal from "react-bootstrap/Modal";
  */
 const OnlyMediaCarousel = (props) => {
 
+
     let displayCarouselItems = null;
     if (props.annotationData.mediaObjects && props.annotationData.mediaObjects.length > 0) {
         displayCarouselItems = props.annotationData.mediaObjects.map((mediaObject, index) => {
@@ -24,7 +25,11 @@ const OnlyMediaCarousel = (props) => {
                             isAnnotationVideo={null}
                             videoURL={null}
                             iframeSource={null}
+                            iiifSource={null}
+                            iiifMultiSource={null}
                             imageUrl={process.env.PUBLIC_URL + mediaObject.link}
+                            carouselUsed={true}
+                            isMediaUsed={props.annotationData.isMediaUsed}
                         />
                     </Carousel.Item>
                 )
@@ -37,7 +42,43 @@ const OnlyMediaCarousel = (props) => {
                             isAnnotationVideo={null}
                             videoURL={null}
                             iframeSource={mediaObject.link}
+                            iiifSource={null}
+                            iiifMultiSource={null}
                             imageUrl={null}
+                            carouselUsed={true}
+                            isMediaUsed={props.annotationData.isMediaUsed}
+                        />
+                    </Carousel.Item>
+                )
+            } else if (mediaObject.type === "iiifSource") {
+                //    iiifSource
+                return (
+                    <Carousel.Item key={mediaObject.link}>
+                        <DisplayMediaComponent
+                            isAnnotationVideo={null}
+                            videoURL={null}
+                            iframeSource={null}
+                            iiifSource={mediaObject.link}
+                            iiifMultiSource={null}
+                            imageUrl={null}
+                            carouselUsed={true}
+                            isMediaUsed={props.annotationData.isMediaUsed}
+                        />
+                    </Carousel.Item>
+                )
+            } else if (mediaObject.type === "iiifMultiSource") {
+                //iiifMultiSource
+                return (
+                    <Carousel.Item key={mediaObject.link}>
+                        <DisplayMediaComponent
+                            isAnnotationVideo={null}
+                            videoURL={null}
+                            iframeSource={null}
+                            iiifSource={null}
+                            iiifMultiSource={mediaObject.link}
+                            imageUrl={null}
+                            carouselUsed={true}
+                            isMediaUsed={props.annotationData.isMediaUsed}
                         />
                     </Carousel.Item>
                 )
@@ -50,7 +91,11 @@ const OnlyMediaCarousel = (props) => {
                             isAnnotationVideo={true}
                             videoURL={process.env.PUBLIC_URL + mediaObject.link}
                             iframeSource={null}
+                            iiifSource={null}
+                            iiifMultiSource={null}
                             imageUrl={null}
+                            carouselUsed={true}
+                            isMediaUsed={props.annotationData.isMediaUsed}
                         />
                     </Carousel.Item>
                 )

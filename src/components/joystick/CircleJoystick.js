@@ -12,7 +12,7 @@ import {
     JOYSTICK_SPEED,
     CIRCLE_COLOR_NORMAL,
     CIRCLE_BORDER_NORMAL, JOYSTICK_ROTATION_SPEED
-} from './CircleJoystickConstants'
+} from '../../client-data/CircleJoystickConstants'
 
 import NavigationCore from '../navigation/navigation-core'
 

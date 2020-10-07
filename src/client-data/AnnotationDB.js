@@ -14,8 +14,11 @@ export const ENQUIRE_EMAIL = 'ENQUIRE';
 export const LINKED_IN = 'LINKEDIN';
 export const HAS_MEDIA_CAROUSEL_LINK = 'MORE';
 export const SEND_TO_EMAIL = 'SEND TO';
-export const CANTALOUPE_IMAGE_SERVER = "http://18.130.251.124:8080/iiif/2/test01%2Fmichael-hill%2Fshow-01%2F";
-export const CHAT_LICENSE_ID = "12214428";
+export const CANTALOUPE_IMAGE_SERVER = "https://iiif.v21artspace.com/iiif/2/made-with-many%2Fmwm-time-to%2F"
+export const ANNOTATION_TEXT_ALIGNMENT = "center";
+export const ANNOTATION_TEXT_LINE_HEIGHT = "1.5";
+export const GALLERY_LINK_LABEL = "WORKS";
+
 
 const AnnotationsDB = [
     /* Video annotation starts */

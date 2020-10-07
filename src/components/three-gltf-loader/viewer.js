@@ -153,8 +153,8 @@ class Viewer {
         webglCanvas.style.height = '100%';
         this.renderer.physicallyCorrectLights = this.state.physicallyCorrectLights;
         this.renderer.outputEncoding = this.state.outputEncoding;
-       /* this.renderer.gammaOutput = this.state.gammaOutput;
-        this.renderer.gammaInput = this.state.gammaInput;*/
+        /* this.renderer.gammaOutput = this.state.gammaOutput;
+         this.renderer.gammaInput = this.state.gammaInput;*/
 
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setSize(width, height);
@@ -562,12 +562,10 @@ class Viewer {
 
     printGraph(node) {
 
-        if (node.isMesh) {
-            if (node.userData.painting_id) {
-                this.paintingMeshes.push(node);
-                if (this.state.usePaintingsIdForEncoding) {
-                    this.textureEncodingMeshes.push(node);
-                }
+        if (node.userData.painting_id) {
+            this.paintingMeshes.push(node);
+            if (this.state.usePaintingsIdForEncoding) {
+                this.textureEncodingMeshes.push(node);
             }
         }
 
