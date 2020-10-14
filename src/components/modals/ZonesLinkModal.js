@@ -50,7 +50,7 @@ class ZonesLinkModal extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <div className="programme_layout">
-                            <div className="row mx-0"> {/* Title */}
+                            <div className="row mx-0 mb-0"> {/* Title */}
                                 <div className="col">
                                     <b>LOCATION NAME</b>
                                 </div>
@@ -63,7 +63,7 @@ class ZonesLinkModal extends Component {
                             </div>
                             <hr/>
                             <div style={{textAlign: "left"}}> {/* Content */}
-                                <div className="row"> {/* Company A */}
+                                <div className="row mx-0 mb-2"> {/* Company A */}
                                     <div className="col">
                                         LOBBY
                                     </div>
@@ -71,30 +71,70 @@ class ZonesLinkModal extends Component {
                                         9am-5pm
                                     </div>
                                     <div className="col">
-                                        <a href="#">
-                                            GO TO LOBBY
-                                        </a>
+                                        <div className="row">
+                                            <a href="#">
+                                                GO TO LOBBY
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div className="row"> {/* Company A */}
+                                <div className="row mx-0 mb-2"> {/* Company A */}
                                     <div className="col">
                                         BSHF STAND
                                     </div>
                                     <div className="col-3">
                                         9am-5pm
                                     </div>
-                                    <div style={{display: "block"}} className="col">
+                                    <div className="col">
+                                        <div className="row">
                                             <a href="#">CHAT</a>
+                                        </div>
+                                        <div className="row">
                                             <a href="#">WATCH VIDEO</a>
+                                        </div>
+                                        <div className="row">
                                             <a href="#">LISTEN TO BSHF SPEAKER</a>
+                                        </div>
+                                        <div className="row">
                                             <a href="#">DOWNLOAD PDF</a>
-
+                                        </div>
                                     </div>
                                 </div>
 
-
-
+                                <div className="row mx-0 mb-2"> {/* Company A */}
+                                    <div className="col">
+                                        LA MEDICA STAND
+                                    </div>
+                                    <div className="col-3">
+                                        <div className="row">
+                                            9am-10am
+                                        </div>
+                                        <div className="row">
+                                            10:05am-11:00am
+                                        </div>
+                                        <div className="row">
+                                            12am-2pm
+                                        </div>
+                                        <div className="row">
+                                            2:15pm-4:30pm
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="row">
+                                            <a href="#">CHAT</a>
+                                        </div>
+                                        <div className="row">
+                                            <a href="#">WATCH VIDEO</a>
+                                        </div>
+                                        <div className="row">
+                                            <a href="#">LISTEN TO BSHF SPEAKER</a>
+                                        </div>
+                                        <div className="row">
+                                            <a href="#">DOWNLOAD PDF</a>
+                                        </div>
+                                    </div>
+                                </div>
 
 
                             </div>
