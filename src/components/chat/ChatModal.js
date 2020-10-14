@@ -30,7 +30,7 @@ const ChatModal = (props) => {
 
     const modalChat = <Modal show={props.showChat} onHide={modalCloseHandler} animation={false} scrollable="true">
                 <Modal.Header closeButton>
-                    <Modal.Title>{props.annotationData.chatTitle}</Modal.Title>
+                    <Modal.Title style={{fontFamily: ""}}>{props.annotationData.chatTitle}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                     {/*<div style={{width: "100%", height: "100%", all: "revert"}}>*/}

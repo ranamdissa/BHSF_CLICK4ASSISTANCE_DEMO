@@ -74,7 +74,7 @@ const AnnotationsDB = [
         videoId: null,
         videoURL: null,
         //This is Company Rana's URL
-        chatTitle: "Company A",
+        chatTitle: "BSHF",
         chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=1&ToolType=1',
         headerText: '',
         bodyText: ``,
@@ -89,7 +89,7 @@ const AnnotationsDB = [
         videoId: null,
         videoURL: null,
         //This is Joe's Admin URL
-        chatTitle: "Company B",
+        chatTitle: "LA MEDICA",
         chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=3&ToolType=1',
         headerText: '',
         bodyText: ``,
