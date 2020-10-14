@@ -46,70 +46,56 @@ class ZonesLinkModal extends Component {
                        show={this.props.show}
                        onHide={this.hideModal} size={this.props.modelType}>
                     <Modal.Header closeButton style={{border: 'none'}}>
+                        <Modal.Title>Event Progamme</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <div className="zone_links">
-                            {/*<h3>{ZONE_LINKS_LABEL}</h3>*/}
-                            {/*{zonesLinks}*/}
-                            <h3>Event Progamme</h3>
+                        <div className="programme_layout">
                             <div className="row mx-0"> {/* Title */}
                                 <div className="col">
+                                    <b>LOCATION NAME</b>
+                                </div>
+                                <div className="col-3">
                                     <b>TIME</b>
                                 </div>
                                 <div className="col">
-                                    <b>NO.</b>
-                                </div>
-                                <div className="col">
-                                    <b>STAND</b>
-                                </div>
-                                <div className="col">
-                                    <b>EVENT</b>
+                                    <b>EVENTS LINK</b>
                                 </div>
                             </div>
                             <hr/>
-                            <div> {/* Content */}
-                                <div style={{display: "inline"}}> {/* Company A */}
-                                    <h6>9am - 10am</h6>
-                                    <h6>01</h6>
-                                    <h6>COMPANY A</h6>
-                                    <h6>EVENTS</h6>
-                                    <div> {/* Event activities, has to show in a 1-column - many rows */}
-                                        <ul>
-                                            <li>Chat</li>
-                                            <li>Watch Video</li>
-                                            <li>Listen to Audio</li>
-                                            <li>Download PDF</li>
-                                        </ul>
+                            <div style={{textAlign: "left"}}> {/* Content */}
+                                <div className="row"> {/* Company A */}
+                                    <div className="col">
+                                        LOBBY
+                                    </div>
+                                    <div className="col-3">
+                                        9am-5pm
+                                    </div>
+                                    <div className="col">
+                                        <a href="#">
+                                            GO TO LOBBY
+                                        </a>
                                     </div>
                                 </div>
-                                <div style={{display: "inline"}}> {/* Company A */}
-                                    <h6>9am - 5pm</h6>
-                                    <h6>02</h6>
-                                    <h6>COMPANY B</h6>
-                                    <h6>EVENTS</h6>
-                                    <div> {/* Event activities, has to show in a 1-column - many rows */}
-                                        <ul>
-                                            <li>Chat</li>
-                                            <li>Watch Video</li>
-                                            <li>Listen to Audio</li>
-                                            <li>Download PDF</li>
-                                        </ul>
+
+                                <div className="row"> {/* Company A */}
+                                    <div className="col">
+                                        BSHF STAND
+                                    </div>
+                                    <div className="col-3">
+                                        9am-5pm
+                                    </div>
+                                    <div style={{display: "block"}} className="col">
+                                            <a href="#">CHAT</a>
+                                            <a href="#">WATCH VIDEO</a>
+                                            <a href="#">LISTEN TO BSHF SPEAKER</a>
+                                            <a href="#">DOWNLOAD PDF</a>
+
                                     </div>
                                 </div>
-                                <div style={{display: "inline"}}> {/* Company A */}
-                                    <h6>9am - 6pm</h6>
-                                    <h6>01</h6>
-                                    <h6>COMPANY C</h6>
-                                    <h6>EVENTS</h6>
-                                    <div> {/* Event activities, has to show in a 1-column - many rows */}
-                                        <ul>
-                                            <li>Chat</li>
-                                            <li>Watch Video</li>
-                                            <li>Listen to Audio</li>
-                                            <li>Download PDF</li>
-                                        </ul>
-                                    </div>
-                                </div>
+
+
+
+
 
                             </div>
                         </div>

@@ -850,6 +850,10 @@ li.v21-nav-item {
   /*.link { color: #FF0000; }*/
 }
 
+.programme_layout {
+  text-align: left;
+}
+
 .v21-logo:hover {
   color: #FFC417;
 }

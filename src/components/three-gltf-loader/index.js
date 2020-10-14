@@ -588,7 +588,7 @@ class ThreeGLTFLoader extends Component {
                             <a className="v21-logo" href="#" onClick={() => this.v21ArtspaceOnClickHandler()}>V21 ARTSPACE</a>
                         </div>
                         <HelpModal showHelp={this.state.showHelp} closefunc={this.closeHelp} modelType="sm"/>
-                        <ZonesLinkModal show={this.state.showZonesShortCutModal} close={this.closeZonesShortcutHandler} modelType="sm" zonesData={this.zonesData} onClickHandler={this.onClickZonesLinkHandler}/>
+                        <ZonesLinkModal show={this.state.showZonesShortCutModal} close={this.closeZonesShortcutHandler} modelType="md" zonesData={this.zonesData} onClickHandler={this.onClickZonesLinkHandler}/>
                         <AnnotationModal showAnnotationModal={this.state.showAnnotationModal}
                                          hideAnnotationModal={this.hideAnnotationModal} annotationModalSize="md"
                                          annotationData={this.annotationData}/>
@@ -668,7 +668,7 @@ class ThreeGLTFLoader extends Component {
 
 
                     <HelpModal showHelp={this.state.showHelp} closefunc={this.closeHelp} modelType="lg"/>
-                    <ZonesLinkModal show={this.state.showZonesShortCutModal} close={this.closeZonesShortcutHandler} modelType="md" zonesData={this.zonesData} onClickHandler={this.onClickZonesLinkHandler}/>
+                    <ZonesLinkModal show={this.state.showZonesShortCutModal} close={this.closeZonesShortcutHandler} modelType="lg" zonesData={this.zonesData} onClickHandler={this.onClickZonesLinkHandler}/>
                     <AnnotationModal showAnnotationModal={this.state.showAnnotationModal}
                                      hideAnnotationModal={this.hideAnnotationModal} annotationModalSize="md"
                                      annotationData={this.annotationData}/>
