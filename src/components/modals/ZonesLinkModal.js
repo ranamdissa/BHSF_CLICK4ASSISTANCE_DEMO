@@ -62,7 +62,7 @@ class ZonesLinkModal extends Component {
                                 </div>
                             </div>
                             <hr/>
-                            <div style={{textAlign: "left"}}> {/* Content */}
+                            <div style={{textAlign: "left"}} className="programme-hyperlink"> {/* Content */}
                                 <div className="row mx-0 mb-2"> {/* Company A */}
                                     <div className="col">
                                         LOBBY

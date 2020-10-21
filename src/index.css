@@ -854,6 +854,16 @@ li.v21-nav-item {
   text-align: left;
 }
 
+.programme-hyperlink a {
+
+}
+
 .v21-logo:hover {
   color: #FFC417;
+}
+
+.modal-header {
+  justify-content: center !important;
+  text-align: center !important;
+
 }

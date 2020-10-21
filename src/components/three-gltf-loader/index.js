@@ -470,6 +470,8 @@ class ThreeGLTFLoader extends Component {
     openChatWindowHandler = (chatSrc) => {
         console.log("[inde.js]; Openning Chat Window", chatSrc);
         window.open(chatSrc,'popup','width=600,height=600,scrollbars=no,resizable=no');
+        // window.open(chatSrc,'popup','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=600');
+        // window.open(chatSrc,'popup','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
         return false;
     }
 
@@ -486,7 +488,7 @@ class ThreeGLTFLoader extends Component {
                     closeNavItem: true,
                     openMenu: false
                 })
-                // this.openChatWindowHandler(this.annotationData.chatSrc)
+                this.openChatWindowHandler(this.annotationData.chatSrc)
 
             } else if (this.annotationData.hasCarouselAsParent === 'Y' && this.annotationData.socialMedia === 'N') {
                 this.setState({
@@ -564,15 +566,15 @@ class ThreeGLTFLoader extends Component {
     render() {
 
         let chatElement = null;
-        if(this.state.showChat && this.annotationData) {
-
-            chatElement =  <ChatModal
-                        annotationData={this.annotationData}
-                        showChat={this.state.showChat}
-                        chatCloseBtnHandler={this.hideChatHandler}
-                    />
-
-        }
+        // if(this.state.showChat && this.annotationData) {
+        //
+        //     chatElement =  <ChatModal
+        //                 annotationData={this.annotationData}
+        //                 showChat={this.state.showChat}
+        //                 chatCloseBtnHandler={this.hideChatHandler}
+        //             />
+        //
+        // }
 
         if (window.isMobile) {
 

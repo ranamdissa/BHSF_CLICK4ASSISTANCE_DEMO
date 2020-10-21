@@ -11,49 +11,54 @@ const ChatModal = (props) => {
 
     console.log("[ChatModal] - render called chatElement to be mounted", props.annotationData.paintingId, props.annotationData.chatSrc);
 
-   const  onClickHandler = (chatSrc) => {
-        window.open(chatSrc,'popup','width=600,height=600,scrollbars=no,resizable=no');
+    const onClickHandler = (chatSrc) => {
+        window.open(chatSrc, 'popup', 'width=600,height=600,scrollbars=no,resizable=no');
         return false;
     }
 
     let chatIframeElement = null;
-        //<iframe title="pureChat" width='100%' height='680'
-        chatIframeElement = <iframe height="890"
-                                    src={props.annotationData.chatSrc}
-                              frameBorder="0">
-        </iframe>;
+    //<iframe title="pureChat" width='100%' height='680'
+    chatIframeElement = <iframe height="890"
+                                src={props.annotationData.chatSrc}
+                                frameBorder="0">
+    </iframe>;
 
     const modalCloseHandler = () => {
         props.chatCloseBtnHandler();
     }
 
 
-    const modalChat = <Modal show={props.showChat} onHide={modalCloseHandler} animation={false} scrollable="true">
-                <Modal.Header closeButton>
-                    <Modal.Title style={{fontFamily: ""}}>{props.annotationData.chatTitle}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                    {/*<div style={{width: "100%", height: "100%", all: "revert"}}>*/}
-                        {chatIframeElement}
-                    {/*</div>*/}
+    const modalChat = <Modal
+        aria-labelledby="chatModal"
+        dialogClassName="chat-modal"
+        show={props.showChat} onHide={modalCloseHandler} animation={false} scrollable="true">
+        <Modal.Header closeButton>
+            <Modal.Title id="chatModal">{props.annotationData.chatTitle}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            {/*<div style={{width: "100%", height: "100%", all: "revert"}}>*/}
+            {chatIframeElement}
+            {/*</div>*/}
 
-                    </Modal.Body>
-            </Modal>;
+        </Modal.Body>
+    </Modal>;
 
 
     const windowChat =
-                <a href={props.annotationData.chatSrc}
-                   target="popup"
-                   onClick={() => onClickHandler(props.annotationData.showChat, props.annotationData.chatSrc)}>
-                </a>;
+        <a href={props.annotationData.chatSrc}
+           target="popup"
+           onClick={() => onClickHandler(props.annotationData.showChat, props.annotationData.chatSrc)}>
+        </a>;
 
 
     return (
-        <div style={{all: "initial"}}>
+        <div style={{all: "initial"}} onClick={() => this.onClickHandler(props.annotationData.chatSrc)}>
             {/*{windowChat}*/}
-            {modalChat}
-            </div>
-        )
-    }
+            {/*{modalChat}*/}
+            {/*window.open(props., 'popup', 'width=600,height=600,scrollbars=no,resizable=no');*/}
+            {/*return false;*/}
+        </div>
+    )
+}
 
 export default ChatModal;
