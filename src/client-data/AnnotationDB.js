@@ -68,14 +68,29 @@ const AnnotationsDB = [
     /* Audio annotation ends */
 
     /* Chat annotation starts */
+    // {
+    //     //Red Floating annotation!!
+    //     paintingId: 'Chat01',
+    //     videoId: null,
+    //     videoURL: null,
+    //     //This is of ID=1
+    //     chatTitle: "BSHF",
+    //     chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=1&ToolType=1',
+    //     headerText: '',
+    //     bodyText: ``,
+    //     annotationPos: {x:-1.27073 ,y:-1.01923,z:1.3573},
+    //     annotationParent: ANNOTATION_PARENT.PARENT_NONE,
+    //     spriteImageURL:process.env.PUBLIC_URL + '/assets/sprites/ChatDotsFill.svg',
+    //     displayMesh: 'N',
+    // },
     {
         //Red Floating annotation!!
         paintingId: 'Chat01',
         videoId: null,
         videoURL: null,
-        //This is Company Rana's URL
-        chatTitle: "BSHF",
-        chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=1&ToolType=1',
+        //This is has an ID=4
+        chatTitle: "Rana Inc.",
+        chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=4&ToolType=1',
         headerText: '',
         bodyText: ``,
         annotationPos: {x:-1.27073 ,y:-1.01923,z:1.3573},
@@ -88,7 +103,7 @@ const AnnotationsDB = [
         paintingId: 'Chat02',
         videoId: null,
         videoURL: null,
-        //This is Joe's Admin URL
+        //This is of Id=3
         chatTitle: "LA MEDICA",
         chatSrc: 'https://v4in1-ti.click4assistance.co.uk/DefaultChat.aspx?AccGUID= a16050ca-4750-44bd-8bec-16a479bf22c6 &ScriptID=3&ToolType=1',
         headerText: '',
