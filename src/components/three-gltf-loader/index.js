@@ -470,6 +470,7 @@ class ThreeGLTFLoader extends Component {
     openChatWindowHandler = (chatSrc) => {
         console.log("[inde.js]; Openning Chat Window", chatSrc);
         window.open(chatSrc,'popup','width=600,height=600,scrollbars=no,resizable=no');
+        // window.open(chatSrc,'_blank','width=600,height=600,scrollbars=no,resizable=no');
         // window.open(chatSrc,'popup','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=600');
         // window.open(chatSrc,'popup','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
         return false;
